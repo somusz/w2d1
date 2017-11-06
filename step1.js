@@ -10,15 +10,10 @@ function getAndPrintHTMLChunks () {
   https.get(requestOptions, (response) => {
     response.setEncoding('utf8');
 
-    var rawData = '';
     response.on('data', (chunk) => {
-      rawData += chunk + '\n'
-      console.log(rawData);
+      console.log(chunk);
     });
 
-    response.on('error', (error) => {
-      console.log('Error during download');
-    });
   });
 
 }
